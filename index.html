@@ -1,365 +1,645 @@
-<!DOCTYPE HTML>
-<!--
-	Massively by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
-<html>
-	<head>
-		<title>Ahmed Awwad Protofile</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Ahmed Awwad — Data Analyst portfolio featuring SQL, Python, Power BI, Excel, data analytics and software engineering projects.">
+<meta name="author" content="Ahmed Awwad">
+<title>Ahmed Awwad | Data Analyst Portfolio</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-		<!-- Wrapper -->
-			<div id="wrapper" class="fade-in">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 
-				<!-- Intro -->
-					<div id="intro">
-						<h1>Ahmed Awwad <br> Protofile </h1>
-						<p>I am a Data Analyst with a strong Software Engineering background, combining expertise in data analysis,<br> SQL, Python, Excel,
-							 and Power BI with hands-on experience in web and mobile application development.<br> <a href="https://github.com/ahmedawwad407">@AhmedAwwad</a></p>
-						<ul class="actions">
-							<li><a href="#header" class="button icon solid solo fa-arrow-down scrolly">Continue</a></li>
-						</ul>
-					</div>
+:root {
+    --ink:#101010;
+    --paper:#f5f4f0;
+    --white:#ffffff;
+    --muted:#686868;
+    --line:#d9d7d0;
+    --accent:#c9ff3f;
+    --dark:#111111;
+    --max:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;font-size:16px;line-height:1.65}
+a{color:inherit;text-decoration:none}
+img{display:block;width:100%}
+#wrapper{overflow:hidden}
+#page-loader{position:fixed;inset:0;background:#101010;z-index:9999;display:grid;place-items:center;transition:opacity .6s,visibility .6s}
+#page-loader span{width:34px;height:34px;border:2px solid #444;border-top-color:var(--accent);border-radius:50%;animation:spin .8s linear infinite}
+body.loaded #page-loader{opacity:0;visibility:hidden}
+@keyframes spin{to{transform:rotate(360deg)}}
+#hero{min-height:100vh;background:#111;color:#fff;position:relative;display:flex;flex-direction:column}
+.hero-grid{position:absolute;inset:0;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.22) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.22) 1px,transparent 1px);background-size:72px 72px;mask-image:linear-gradient(to bottom,black,transparent 85%)}
+.topbar{height:88px;max-width:var(--max);width:calc(100% - 64px);margin:auto;display:flex;align-items:center;justify-content:space-between;position:relative;z-index:2}
+.brand{font-family:"Space Grotesk";font-weight:700;font-size:25px;letter-spacing:-1px}
+.brand span{color:var(--accent)}
+.top-links{display:flex;gap:30px;align-items:center;font-size:13px;font-weight:600}
+.top-links>a:not(.nav-cv){opacity:.75;transition:.25s}
+.top-links>a:hover{opacity:1}
+.nav-cv{padding:10px 16px;border:1px solid #555;border-radius:2px}
+.hero-inner{width:calc(100% - 64px);max-width:var(--max);margin:auto;padding:80px 0 120px;position:relative;z-index:1}
+.availability{display:inline-flex;align-items:center;gap:9px;border:1px solid #3b3b3b;padding:8px 13px;border-radius:100px;font-size:11px;text-transform:uppercase;letter-spacing:1.3px;color:#bbb;margin-bottom:28px}
+.pulse{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 5px rgba(201,255,63,.09)}
+.eyebrow{font-size:12px;letter-spacing:4px;color:#999;margin:0 0 10px;font-weight:600}
+h1,h2,h3{font-family:"Space Grotesk",sans-serif;letter-spacing:-.045em;line-height:1.02;margin:0}
+h1{font-size:clamp(54px,8vw,108px);max-width:1050px}
+h1 span{color:#767676}
+.hero-copy{max-width:670px;color:#aaa;font-size:17px;margin:30px 0 34px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:14px 21px;font-size:13px;font-weight:700;border:1px solid transparent;transition:.25s}
+.btn-primary{background:var(--accent);color:#111}
+.btn-primary:hover{transform:translateY(-3px);box-shadow:0 10px 30px rgba(201,255,63,.13)}
+.btn-secondary{border-color:#4c4c4c;color:#fff}
+.btn-secondary:hover{background:#fff;color:#111}
+.btn-dark{background:#111;color:#fff}
+.btn-dark:hover{background:#292929;transform:translateY(-2px)}
+.btn-outline-dark{border-color:#111}
+.btn-outline-dark:hover{background:#111;color:#fff}
+.hero-tools{display:flex;gap:10px;flex-wrap:wrap;margin-top:50px}
+.hero-tools span,.tags span{border:1px solid #3c3c3c;border-radius:100px;padding:5px 11px;font-size:11px;color:#aaa}
+.scroll-cue{position:absolute;right:32px;bottom:28px;display:flex;align-items:center;gap:10px;font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#777;z-index:2}
+.scroll-cue i{color:var(--accent)}
+.section{max-width:var(--max);width:calc(100% - 64px);margin:auto;padding:125px 0}
+.section-label{font-size:10px;letter-spacing:2.2px;font-weight:700;color:#777;margin-bottom:35px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:100px}
+.kicker{font-size:11px;letter-spacing:2px;font-weight:700;color:#777;margin:0 0 18px}
+.about-section h2,.section-heading h2{font-size:clamp(42px,5vw,70px)}
+em{font-style:normal;color:#767676}
+.about-copy{max-width:570px;font-size:17px;color:#555}
+.about-copy p{margin-top:0;margin-bottom:22px}
+.skill-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:30px}
+.skill-list span{border:1px solid #ccc;padding:8px 12px;font-size:11px;font-weight:600}
+.stats-section{border-top:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:45px 0}
+.stat{padding:0 30px;border-right:1px solid var(--line)}
+.stat:first-child{padding-left:0}
+.stat:last-child{border:0}
+.stat strong{font-family:"Space Grotesk";font-size:38px;display:block;letter-spacing:-2px}
+.stat span{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#777}
+.section-heading{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:65px}
+.section-heading>p{max-width:390px;color:#777;font-size:14px;margin:0}
+.featured-project{display:grid;grid-template-columns:1.25fr .75fr;background:#fff;border:1px solid #dedcd5;margin-bottom:110px}
+.featured-image{min-height:500px;overflow:hidden}
+.featured-image img{height:100%;object-fit:cover;transition:transform .7s}
+.featured-image a{display:block;height:100%}
+.featured-image a:hover img{transform:scale(1.025)}
+.featured-content{padding:65px;display:flex;flex-direction:column;justify-content:center}
+.project-number{font-size:10px;letter-spacing:2px;color:#888;font-weight:700;margin-bottom:20px}
+.featured-content h3{font-size:clamp(40px,4vw,62px);margin-bottom:22px}
+.featured-content p{color:#666;font-size:14px;max-width:440px}
+.tags{display:flex;gap:7px;flex-wrap:wrap;margin:17px 0 30px}
+.tags span{border-color:#d5d5d5;color:#555}
+.category{margin-bottom:105px}
+.category-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line);padding-bottom:17px;margin-bottom:28px}
+.category-head h3{font-size:30px}
+.category-head h3 span{font-size:11px;color:#aaa;vertical-align:middle;margin-left:8px;letter-spacing:1px}
+.category-head a{font-size:11px;text-transform:uppercase;letter-spacing:1px;color:#777}
+.category-head a:hover{color:#111}
+.project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.project-card{background:#fff;border:1px solid #e0ded7;display:flex;flex-direction:column;min-width:0}
+.project-image{display:block;aspect-ratio:1.5/1;overflow:hidden;position:relative;background:#e9e8e4}
+.project-image img{height:100%;object-fit:cover;transition:transform .55s}
+.project-card:hover .project-image img{transform:scale(1.04)}
+.image-overlay{position:absolute;right:12px;top:12px;width:35px;height:35px;border-radius:50%;display:grid;place-items:center;background:var(--accent);color:#111;opacity:0;transform:translateY(6px);transition:.3s}
+.project-card:hover .image-overlay{opacity:1;transform:translateY(0)}
+.project-content{padding:26px;display:flex;flex-direction:column;flex:1}
+.project-content h3{font-size:23px;margin-bottom:12px}
+.project-content p{font-size:13px;color:#777;margin:0 0 22px}
+.project-link{font-size:11px;text-transform:uppercase;letter-spacing:1px;font-weight:700;margin-top:auto}
+.project-link i{margin-left:5px;transition:.2s}
+.project-link:hover i{transform:translateX(4px)}
+.software-category{border-top:1px solid var(--line);padding-top:80px}
+.contact-cta{max-width:none;width:100%;background:var(--accent);text-align:center;padding:125px 30px}
+.contact-cta .section-label{color:#555}
+.contact-cta h2{font-size:clamp(48px,7vw,90px)}
+.contact-cta>p{max-width:520px;margin:25px auto;color:#4f5a2f;font-size:15px}
+.contact-actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:28px}
+#footer{background:#111;color:#fff;padding:55px max(32px,calc((100% - 1240px)/2))}
+.footer-brand{display:flex;align-items:center;gap:18px}
+.footer-brand>span{font-family:"Space Grotesk";font-size:30px;font-weight:700}
+.footer-brand p{color:#777;font-size:12px}
+.footer-social{display:flex;gap:28px;margin-top:35px;font-size:12px;color:#aaa}
+.footer-social a:hover{color:#fff}
+.footer-bottom{border-top:1px solid #292929;margin-top:40px;padding-top:20px;display:flex;justify-content:space-between;color:#666;font-size:10px;text-transform:uppercase;letter-spacing:1px}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){
+    .top-links>a:not(.nav-cv){display:none}
+    .hero-inner{padding-top:55px}
+    .about-grid,.featured-project{grid-template-columns:1fr;gap:0}
+    .about-copy{margin-top:35px}
+    .featured-image{min-height:auto;aspect-ratio:1.45}
+    .featured-content{padding:42px}
+    .project-grid{grid-template-columns:repeat(2,1fr)}
+    .stats-section{grid-template-columns:repeat(2,1fr);gap:35px 0}
+    .stat:nth-child(2){border:0}
+    .section-heading{display:block}
+    .section-heading>p{margin-top:25px}
+}
+@media(max-width:600px){
+    .topbar,.hero-inner,.section{width:calc(100% - 36px)}
+    .topbar{height:72px}
+    .nav-cv{padding:8px 11px}
+    h1{font-size:52px}
+    .hero-copy{font-size:15px}
+    .scroll-cue{display:none}
+    .section{padding:85px 0}
+    .project-grid{grid-template-columns:1fr}
+    .featured-content{padding:30px}
+    .featured-image{aspect-ratio:1.35}
+    .stats-section{width:calc(100% - 36px)}
+    .stat{padding:0 15px}
+    .stat strong{font-size:30px}
+    .footer-social{flex-direction:column;gap:12px}
+    .footer-bottom{display:block}
+    .footer-bottom span{display:block;margin-bottom:8px}
+}
 
-				
-				<!-- Header -->
-					<header id="header">
-						<a href="index.html" class="logo">Ahmed Awwad</a>
-					</br>
-											
-					</header>
+/* Contact cards */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(280px, 360px));
+  justify-content: center;
+  gap: 14px;
+  margin: 30px auto 0;
+  width: 100%;
+}
 
-				<!-- Nav -->
-				<nav id="nav">
-<ul class="links"><li class="active"><a href="#projects">All</a></li>
-		<li><a href="#sql-projects">SQL</a></li>
-	<li><a href="#python-projects">Python</a></li>
-		<li><a href="#powerbi-projects">Power BI</a></li>
-	<li><a href="#excel-projects">Excel</a></li>
-	<li><a href="#software-projects">Software Projects</a></li>
-	<li><a href="Ahmed_Awwad_Data_Analyst_CV.pdf" target="_blank">CV</a></li>
-</ul>
-<ul class="icons">
-<li><a class="icon brands fa-linkedin" href="https://www.linkedin.com/in/ahmedwadieawwad/"><span class="label">LinkedIn</span></a></li>
-<li><a class="icon brands fa-github" href="https://github.com/ahmedawwad407"><span class="label">GitHub</span></a></li>
-</ul>
-</nav>
-				<!-- Main -->
-					<div id="main">
 
-					
-						<!-- Featured Post -->
-							<article class="post featured">
-								<header class="major">
-									<h2><a href="https://github.com/ahmedawwad407/Data-Cleaning-Portfolio-Project-SQL/blob/main/Data%20Cleaning%20Portfolio%20Project%20Queries.sql">Data Cleaning in SQL<br />
-									</a></h2>
-									<p>In this project we take raw housing data and transform<br>
-										it in SQL Server to make it more usable for analysis.</p>
-								</header>
-								<a href="https://github.com/ahmedawwad407/Data-Cleaning-Portfolio-Project-SQL/blob/main/Data%20Cleaning%20Portfolio%20Project%20Queries.sql" class="image main"><img src="images/dataset.jpg" alt="" /></a>
-								<ul class="actions special">
-									<li><a href="https://github.com/ahmedawwad407/Data-Cleaning-Portfolio-Project-SQL/blob/main/Data%20Cleaning%20Portfolio%20Project%20Queries.sql" class="button large">View Project</a></li>
-								</ul>
-							</article>
-							
-							<section  id="sql-projects"><header class="major"><h2>SQL Projects</h2></header></section>
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 20px;
+  border: 1px solid rgba(0,0,0,.10);
+  border-radius: 16px;
+  background: rgba(255,255,255,.72);
+  color: inherit;
+  text-decoration: none;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
 
-						<!-- Posts -->
-							<section class="posts">
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/Customer_Marketing_Analysis_SQL">Customer Marketing Analysis<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/Customer_Marketing_Analysis_SQL" class="image fit"><img src="images/Customer_Marketing_Analysis_SQL.png" alt="" /></a>
-									<p>SQL-based customer and marketing analytics project exploring customer value, campaign performance, conversion rates, sales trends, and business insights using advanced SQL techniques.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/Customer_Marketing_Analysis_SQL" class="button">View Project</a></li>
-									</ul>
-								</article>
+.contact-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0,0,0,.08);
+  border-color: rgba(0,0,0,.22);
+}
 
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/E-Commerce_Sales_Analysis_SQL">E-Commerce Sales Analysis<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/E-Commerce_Sales_Analysis_SQL" class="image fit"><img src="images/E-Commerce_Sales_Analysis_SQL.png" alt="" /></a>
-									<p>SQL-based e-commerce sales analysis project exploring sales performance, customer behavior, product trends, revenue, and key business insights using advanced SQL techniques.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/E-Commerce_Sales_Analysis_SQL" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/Layoffs_Data_Analysis_SQL">Layoffs Data Analysis<br/>
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/Layoffs_Data_Analysis_SQL" class="image fit"><img src="images/Layoffs.png" alt="" /></a>
-									<p>SQL-based layoffs data analysis project exploring company layoffs, industry trends, workforce reductions, and key patterns using data cleaning and advanced SQL techniques.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/Layoffs_Data_Analysis_SQL" class="button">View Project</a></li>
-									</ul>
-								</article>
+.contact-icon {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #111;
+  color: #fff;
+  flex: 0 0 42px;
+}
 
-								<article>
-									<header>
-										
-										<h2><a href="https://github.com/ahmedawwad407/Portfolio-Projects/blob/main/COVID%20Portfolio%20Project%20-%20Data%20Exploration.sql">COVID 19
-											Data Exploration<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/Portfolio-Projects/blob/main/COVID%20Portfolio%20Project%20-%20Data%20Exploration.sql" class="image fit"><img src="images/images.jpg" alt="" /></a>
-									<p>In this project we use SQL Server to explore global COVID 19 data.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/Portfolio-Projects/blob/main/COVID%20Portfolio%20Project%20-%20Data%20Exploration.sql" class="button">View Project</a></li>
-									</ul>
-								</article>
+.contact-card div {
+    align-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-card strong {
+  font-size: .95rem;
+}
+
+.contact-card span:not(.contact-icon) {
+  font-size: .82rem;
+  opacity: .65;
+}
+
+@media (max-width: 700px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    
+  }
+}
+
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+</style>
+
+</head>
+
+<body>
+<div id="page-loader"><span></span></div>
+
+<div id="wrapper">
+    <header id="hero">
+        <div class="hero-grid"></div>
+        <nav class="topbar">
+            <a href="#hero" class="brand">AA<span>.</span></a>
+            <div class="top-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+                <a href="Ahmed_Awwad_Data_Analyst_CV.pdf" target="_blank" class="nav-cv">View CV <i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+        </nav>
+
+        <div class="hero-inner">
+            <div class="availability"><span class="pulse"></span> Data Analytics Portfolio</div>
+            <p class="eyebrow">AHMED AWWAD</p>
+            <h1>Data Analyst<br><span>Turning Data Into Insights.</span></h1>
+            <p class="hero-copy">I analyze, clean, and visualize data to uncover meaningful insights and support better decisions — backed by a strong Software Engineering background.</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">Explore My Work <i class="fas fa-arrow-down"></i></a>
+                <a href="Ahmed_Awwad_Data_Analyst_CV.pdf" target="_blank" class="btn btn-secondary">View My CV <i class="fas fa-arrow-up-right-from-square"></i></a>
+            </div>
+            <div class="hero-tools">
+                <a href="#sql-projects"> <span>SQL</span> </a>
+                <a href="#python-projects"> <span>Python</span> </a>
+                <a href="#powerbi-projects"> <span>Power BI</span> </a>
+                <a href="#excel-projects"> <span>Excel</span> </a>
+                <a href="#software-projects"> <span>Software Engineering</span> </a>
+            </div>
+        </div>
+        <a href="#about" class="scroll-cue"><span>Scroll to explore</span><i class="fas fa-arrow-down"></i></a>
+    </header>
+
+    <main id="main">
+        <section id="about" class="section about-section">
+            <div class="section-label">ABOUT</div>
+            <div class="about-grid">
+                <div>
+                    <p class="kicker">DATA ANALYST + SOFTWARE ENGINEERING BACKGROUND</p>
+                    <h2>I turn <em>raw data</em><br>into clear stories.</h2>
+                </div>
+                <div class="about-copy">
+                    <p>I am a Data Analyst focused on transforming raw data into actionable insights through data cleaning, exploratory analysis, visualization, and reporting.</p>
+                    <p>My background in software engineering gives me a strong technical foundation for working with data, automation, applications, and analytical workflows.</p>
+                    <div class="skill-list">
+                        <span>SQL / MySQL</span><span>Python / Pandas</span><span>Power BI / DAX</span><span>Microsoft Excel</span><span>Data Cleaning</span><span>Data Visualization</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section stats-section">
+            <div class="stat"><strong>20+</strong><span>Portfolio Projects</span></div>
+            <div class="stat"><strong>5</strong><span>Core Analytics Tools</span></div>
+            <div class="stat"><strong>5+</strong><span>Years Technical Experience</span></div>
+            <div class="stat"><strong>1</strong><span>Goal — Better Decisions</span></div>
+        </section>
+
+        <section id="projects" class="section projects-section">
+            <div class="section-heading">
+                <div>
+                    <div class="section-label">SELECTED WORK</div>
+                    <h2>Projects that <em>speak</em> through data.</h2>
+                </div>
+                <p>A curated collection of analytics, visualization, and software projects built to solve practical problems.</p>
+            </div>
+
+            <div class="featured-project">
+                <div class="featured-image">
+                    <a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Healthcare_Analytics_PowerBI" target="_blank" rel="noopener">
+                        <img src="images/01_Healthcare_Overview.png" alt="Healthcare Analytics Power BI Dashboard" loading="lazy">
+                    </a>
+                </div>
+                <div class="featured-content">
+                    <span class="project-number">FEATURED PROJECT</span>
+                    <h3>Healthcare<br><em>Analytics</em></h3>
+                    <p>A professional Power BI analytics solution exploring patients, admissions, readmissions, treatment costs, departments, doctors, diagnoses, and trends.</p>
+                    <div class="tags"><span>Power BI</span><span>Power Query</span><span>DAX</span><span>Data Modeling</span></div>
+                    <a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Healthcare_Analytics_PowerBI" target="_blank" rel="noopener" class="btn btn-dark">View Case Study <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+
+            <div class="category" id="sql-projects">
+                <div class="category-head"><h3>SQL</h3><a href="https://github.com/ahmedawwad407" target="_blank">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+                <div class="project-grid">
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/Customer_Marketing_Analysis_SQL" target="_blank" rel="noopener" class="project-image">
+            <img src="images/Customer_Marketing_Analysis_SQL.png" alt="Customer Marketing Analysis" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/Customer_Marketing_Analysis_SQL" target="_blank" rel="noopener">Customer Marketing Analysis</a></h3>
+            <p>SQL-based customer and marketing analytics exploring customer value, campaign performance, conversion rates, sales trends, and business insights using advanced SQL techniques.</p>
+            <a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/Customer_Marketing_Analysis_SQL" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/E-Commerce_Sales_Analysis_SQL" target="_blank" rel="noopener" class="project-image">
+            <img src="images/E-Commerce_Sales_Analysis_SQL.png" alt="E-Commerce Sales Analysis" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/E-Commerce_Sales_Analysis_SQL" target="_blank" rel="noopener">E-Commerce Sales Analysis</a></h3>
+            <p>SQL-based e-commerce analysis covering sales performance, customer behavior, product trends, revenue, and key business insights.</p>
+            <a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/E-Commerce_Sales_Analysis_SQL" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/Layoffs_Data_Analysis_SQL" target="_blank" rel="noopener" class="project-image">
+            <img src="images/Layoffs.png" alt="Layoffs Data Analysis" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/Layoffs_Data_Analysis_SQL" target="_blank" rel="noopener">Layoffs Data Analysis</a></h3>
+            <p>Explores company layoffs, industry trends, workforce reductions, and key patterns through data cleaning and advanced SQL analysis.</p>
+            <a href="https://github.com/ahmedawwad407/SQL-Analysis-Project/tree/main/Layoffs_Data_Analysis_SQL" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/Portfolio-Projects/blob/main/COVID%20Portfolio%20Project%20-%20Data%20Exploration.sql" target="_blank" rel="noopener" class="project-image">
+            <img src="images/images.jpg" alt="COVID-19 Data Exploration" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/Portfolio-Projects/blob/main/COVID%20Portfolio%20Project%20-%20Data%20Exploration.sql" target="_blank" rel="noopener">COVID-19 Data Exploration</a></h3>
+            <p>SQL Server project exploring global COVID-19 data to identify trends, comparisons, and meaningful analytical insights.</p>
+            <a href="https://github.com/ahmedawwad407/Portfolio-Projects/blob/main/COVID%20Portfolio%20Project%20-%20Data%20Exploration.sql" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article></div>
+            </div>
+
+            <div class="category" id="powerbi-projects">
+                <div class="category-head"><h3>Power BI</h3><a href="https://github.com/ahmedawwad407" target="_blank">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+                <div class="project-grid">
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Healthcare_Analytics_PowerBI" target="_blank" rel="noopener" class="project-image">
+            <img src="images/01_Healthcare_Overview.png" alt="Healthcare Analytics" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Healthcare_Analytics_PowerBI" target="_blank" rel="noopener">Healthcare Analytics</a></h3>
+            <p>Interactive Power BI healthcare dashboard exploring patient trends, healthcare costs, treatment outcomes, and key performance indicators.</p>
+            <a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Healthcare_Analytics_PowerBI" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Data%20Professional%20Survey%20Breakdown" target="_blank" rel="noopener" class="project-image">
+            <img src="images/Data Professional Survey Breakdown.png" alt="Data Professional Survey Breakdown" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Data%20Professional%20Survey%20Breakdown" target="_blank" rel="noopener">Data Professional Survey Breakdown</a></h3>
+            <p>Power BI analysis of salaries, job roles, programming languages, job satisfaction, and industry trends.</p>
+            <a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Data%20Professional%20Survey%20Breakdown" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Logistics_SupplyChain_PowerBI" target="_blank" rel="noopener" class="project-image">
+            <img src="images/Logistics & Supply Chain Analytics Dashboard.png" alt="Logistics &amp; Supply Chain Analytics" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Logistics_SupplyChain_PowerBI" target="_blank" rel="noopener">Logistics &amp; Supply Chain Analytics</a></h3>
+            <p>Interactive dashboard exploring orders, shipping costs, delivery performance, inventory trends, and operational insights.</p>
+            <a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Logistics_SupplyChain_PowerBI" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article></div>
+            </div>
+
+            <div class="category" id="python-projects">
+                <div class="category-head"><h3>Python</h3><a href="https://github.com/ahmedawwad407" target="_blank">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+                <div class="project-grid">
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/Customer_Churn_Analysis_Python" target="_blank" rel="noopener" class="project-image">
+            <img src="images/Customer_Churn_Analysis_Python.png" alt="Customer Churn Analysis" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/Customer_Churn_Analysis_Python" target="_blank" rel="noopener">Customer Churn Analysis</a></h3>
+            <p>Python analysis exploring customer behavior, churn patterns, retention factors, and high-risk segments through cleaning, EDA, visualization, and business insights.</p>
+            <a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/Customer_Churn_Analysis_Python" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/E-Commerce_Sales_Analysis_Python" target="_blank" rel="noopener" class="project-image">
+            <img src="images/E-Commerce Sales Analysis.png" alt="E-Commerce Sales Analysis" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/E-Commerce_Sales_Analysis_Python" target="_blank" rel="noopener">E-Commerce Sales Analysis</a></h3>
+            <p>Python-based e-commerce analysis covering sales performance, customer behavior, product trends, revenue patterns, and business insights.</p>
+            <a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/E-Commerce_Sales_Analysis_Python" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/Marketing_Campaign_Analysis_Python" target="_blank" rel="noopener" class="project-image">
+            <img src="images/Marketing Campaign Analysis.png" alt="Marketing Campaign Analysis" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/Marketing_Campaign_Analysis_Python" target="_blank" rel="noopener">Marketing Campaign Analysis</a></h3>
+            <p>Python marketing analysis exploring campaign performance, customer engagement, conversion rates, and key marketing insights.</p>
+            <a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/Marketing_Campaign_Analysis_Python" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/Amazon-Web-Scraping-with-Python/blob/main/AmazonWebScrapingUsingPython/main.py" target="_blank" rel="noopener" class="project-image">
+            <img src="images/amazon.jpg" alt="Amazon Web Scraper" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/Amazon-Web-Scraping-with-Python/blob/main/AmazonWebScrapingUsingPython/main.py" target="_blank" rel="noopener">Amazon Web Scraper</a></h3>
+            <p>Python web-scraping project collecting Amazon product price data for analysis.</p>
+            <a href="https://github.com/ahmedawwad407/Amazon-Web-Scraping-with-Python/blob/main/AmazonWebScrapingUsingPython/main.py" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/Automatic_File_Sorter/tree/main/AutomaticFileSorter" target="_blank" rel="noopener" class="project-image">
+            <img src="images/AutomaticFileSorter.png" alt="Automatic File Sorter" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/Automatic_File_Sorter/tree/main/AutomaticFileSorter" target="_blank" rel="noopener">Automatic File Sorter</a></h3>
+            <p>Python utility that automatically organizes files into structured folders.</p>
+            <a href="https://github.com/ahmedawwad407/Automatic_File_Sorter/tree/main/AutomaticFileSorter" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article></div>
+            </div>
+
+            <div class="category" id="excel-projects">
+                <div class="category-head"><h3>Excel</h3><a href="https://github.com/ahmedawwad407" target="_blank">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+                <div class="project-grid">
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/Employee_Salary_Analysis" target="_blank" rel="noopener" class="project-image">
+            <img src="images/Employee Salary Dashboard.png" alt="Employee Salary Analysis" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/Employee_Salary_Analysis" target="_blank" rel="noopener">Employee Salary Analysis</a></h3>
+            <p>Excel dashboard analyzing salaries, experience, departments, job roles, education, and gender to uncover salary trends.</p>
+            <a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/Employee_Salary_Analysis" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/HR%20Employee%20Attrition%20Analysis" target="_blank" rel="noopener" class="project-image">
+            <img src="images/HR Employee Attrition Analysis.png" alt="HR Employee Attrition Analysis" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/HR%20Employee%20Attrition%20Analysis" target="_blank" rel="noopener">HR Employee Attrition Analysis</a></h3>
+            <p>Excel dashboard analyzing attrition, job satisfaction, salary, departments, overtime, and employee demographics.</p>
+            <a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/HR%20Employee%20Attrition%20Analysis" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/Sales%20%26%20Profit%20Analysis" target="_blank" rel="noopener" class="project-image">
+            <img src="images/Sales & Profit Analysis Dashboard.png" alt="Sales &amp; Profit Analysis" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/Sales%20%26%20Profit%20Analysis" target="_blank" rel="noopener">Sales &amp; Profit Analysis</a></h3>
+            <p>Excel dashboard analyzing sales, profit, products, regions, and customer segments to identify performance and profitability trends.</p>
+            <a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/Sales%20%26%20Profit%20Analysis" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article></div>
+            </div>
+
+            <div class="category software-category" id="software-projects">
+                <div class="category-head"><h3>Software Engineering</h3><a href="https://github.com/ahmedawwad407" target="_blank">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a></div>
+                <div class="project-grid">
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/Shop_App" target="_blank" rel="noopener" class="project-image">
+            <img src="images/ShopApp.jpg" alt="Shopping App" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/Shop_App" target="_blank" rel="noopener">Shopping App</a></h3>
+            <p>Flutter mobile application for buying and selling furniture and household items.</p>
+            <a href="https://github.com/ahmedawwad407/Shop_App" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/RestaurantApp" target="_blank" rel="noopener" class="project-image">
+            <img src="images/MyRestaurantMeal.jpg" alt="Restaurant App" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/RestaurantApp" target="_blank" rel="noopener">Restaurant App</a></h3>
+            <p>Mobile application for purchasing meals and food items and simplifying the meal booking process.</p>
+            <a href="https://github.com/ahmedawwad407/RestaurantApp" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/QararaApp" target="_blank" rel="noopener" class="project-image">
+            <img src="images/AlQararaApp.jpg" alt="AlQarara App" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/QararaApp" target="_blank" rel="noopener">AlQarara App</a></h3>
+            <p>Municipal mobile application designed to provide smart digital services, news, information, and proposed project updates.</p>
+            <a href="https://github.com/ahmedawwad407/QararaApp" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article>
+
+    <article class="project-card">
+        <a href="https://github.com/ahmedawwad407/Shop_Website" target="_blank" rel="noopener" class="project-image">
+            <img src="images/ShopWebsite.PNG" alt="Shopping Website" loading="lazy">
+            <span class="image-overlay"><i class="fas fa-arrow-up-right-from-square"></i></span>
+        </a>
+        <div class="project-content">
+            <h3><a href="https://github.com/ahmedawwad407/Shop_Website" target="_blank" rel="noopener">Shopping Website</a></h3>
+            <p>E-commerce website for electrical appliances, phones, and smartwatches.</p>
+            <a href="https://github.com/ahmedawwad407/Shop_Website" target="_blank" rel="noopener" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </article></div>
+            </div>
+        </section>
+
+        <section class="section contact-cta" id="contact">
+            <div class="section-label">LET'S CONNECT</div>
+            <h2>Have data?<br><em>Let's find the story.</em></h2>
+            <p>I'm interested in data analysis opportunities, freelance projects, and meaningful work where data can create impact.</p>
+
+    <div class="contact-grid">
+      <a href="mailto:awwadahmed407@gmail.com" class="contact-card">
+        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+        <div>
+          <strong>Email</strong>
+          <span>awwadahmed407@gmail.com</span>
+        </div>
+      </a>
+
+      <a href="https://wa.me/970595250040" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
+        <div>
+          <strong>WhatsApp</strong>
+          <span>Chat with me directly</span>
+        </div>
+      </a>
+
+      <a href="https://www.linkedin.com/in/ahmedwadieawwad/" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <span class="contact-icon"><i class="fab fa-linkedin-in"></i></span>
+        <div>
+          <strong>LinkedIn</strong>
+          <span>Connect with me</span>
+        </div>
+      </a>
+
+      <a href="https://github.com/ahmedawwad407" target="_blank" rel="noopener noreferrer" class="contact-card">
+        <span class="contact-icon"><i class="fab fa-github"></i></span>
+        <div>
+          <strong>GitHub</strong>
+          <span>Explore my projects</span>
+        </div>
+      </a>
+    </div>
+
+    <div class="contact-actions">
+      <a href="Ahmed_Awwad_Data_Analyst_CV.pdf" target="_blank" class="btn btn-outline-dark">
+        View My CV <i class="fas fa-arrow-right"></i>
+      </a>
+    </div>
+  </div>
 </section>
-							<section id="powerbi-projects"><header class="major"><h2>PowerBI Projects</h2></header></section>
+    </main>
 
-						<section class="posts">
+    <footer id="footer">
+        <div class="footer-brand"><span>AA.</span><p>Data Analyst · Software Engineering Background</p></div>
+        <div class="footer-social">
+            <a href="https://www.linkedin.com/in/ahmedwadieawwad/" target="_blank" rel="noopener">LinkedIn <i class="fas fa-arrow-up-right-from-square"></i></a>
+            <a href="https://github.com/ahmedawwad407" target="_blank" rel="noopener">GitHub <i class="fas fa-arrow-up-right-from-square"></i></a>
+            <a href="mailto:awwadahmed407@gmail.com">Email <i class="fas fa-arrow-up-right-from-square"></i></a>
+        </div>
+        <div class="footer-bottom"><span>© 2026 Ahmed Awwad</span></div>
+    </footer>
+</div>
 
+<script>
+window.addEventListener('load', () => document.body.classList.add('loaded'));
 
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Data%20Professional%20Survey%20Breakdown">Data Professional Survey Breakdown<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Data%20Professional%20Survey%20Breakdown" class="image fit"><img src="images/Data Professional Survey Breakdown.png" alt="" /></a>
-									<p>Power BI data professional survey analysis exploring salaries, job roles, programming languages, job satisfaction, and industry trends through interactive dashboards and visualizations.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Data%20Professional%20Survey%20Breakdown" class="button">View Project</a></li>
-									</ul>
-								</article>
+const reveal = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            reveal.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.08 });
 
-																<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Healthcare_Analytics_PowerBI">Healthcare Analytics<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Healthcare_Analytics_PowerBI" class="image fit"><img src="images/01_Healthcare_Overview.png" alt="" /></a>
-									<p>Power BI healthcare analytics project exploring patient trends, healthcare costs, treatment outcomes, and key performance indicators through interactive dashboards and data visualization.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Healthcare_Analytics_PowerBI" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Logistics_SupplyChain_PowerBI">Logistics SupplyChain<br/>
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Logistics_SupplyChain_PowerBI" class="image fit"><img src="images/Logistics & Supply Chain Analytics Dashboard.png" alt="" /></a>
-									<p>Power BI logistics and supply chain analytics project exploring orders, shipping costs, delivery performance, inventory trends, and key operational insights through interactive dashboards.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/PowerBI-Analysis-Projects/tree/main/Logistics_SupplyChain_PowerBI" class="button">View Project</a></li>
-									</ul>
-								</article>
-								</section>
+document.querySelectorAll('.section, .category, .project-card, .featured-project, .stat').forEach(el => {
+    el.classList.add('reveal');
+    reveal.observe(el);
+});
+</script>
+</body>
 
-								<section id="python-projects"><header class="major"><h2>Python Projects</h2></header></section>
-									
-									<section class="posts">
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/Amazon-Web-Scraping-with-Python/blob/main/AmazonWebScrapingUsingPython/main.py">Amazon Web Scraper
-											with Python<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/Amazon-Web-Scraping-with-Python/blob/main/AmazonWebScrapingUsingPython/main.py" class="image fit"><img src="images/amazon.jpg" alt="" /></a>
-									<p>In this project we scrape data from Amazon to analyze price data for products.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/Amazon-Web-Scraping-with-Python/blob/main/AmazonWebScrapingUsingPython/main.py" class="button">View Project</a></li>
-									</ul>
-								</article>
-
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/Automatic_File_Sorter/tree/main/AutomaticFileSorter">Automatic File Sorter<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/Automatic_File_Sorter/tree/main/AutomaticFileSorter" class="image fit"><img src="images/AutomaticFileSorter.png" alt="" /></a>
-									<p>This project automatically organizes and displays files using Python.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/Automatic_File_Sorter/tree/main/AutomaticFileSorter" class="button">View Project</a></li>
-									</ul>
-								</article>
-
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/Customer_Churn_Analysis_Python">Customer Churn Analysis<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/Customer_Churn_Analysis_Python" class="image fit"><img src="images/Customer_Churn_Analysis_Python.png" alt="" /></a>
-									<p>Python-based customer churn analysis project exploring customer behavior, churn patterns, retention factors, and high-risk segments through data cleaning, EDA, visualization, and business insights.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/Customer_Churn_Analysis_Python" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/E-Commerce_Sales_Analysis_Python">E-Commerce Sales Analysis<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/E-Commerce_Sales_Analysis_Python" class="image fit"><img src="images/E-Commerce Sales Analysis.png" alt="" /></a>
-									<p>Python-based e-commerce sales analysis project exploring sales performance, customer behavior, product trends, revenue patterns, and key business insights through data cleaning, EDA, and visualization.
-</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/E-Commerce_Sales_Analysis_Python" class="button">View Project</a></li>
-									</ul>
-								</article>
-
-
-								
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/Marketing_Campaign_Analysis_Python">Marketing Campaign Analysis<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/Marketing_Campaign_Analysis_Python" class="image fit"><img src="images/Marketing Campaign Analysis.png" alt="" /></a>
-									<p>Python-based marketing campaign analysis project exploring campaign performance, customer engagement, conversion rates, and key marketing insights through data cleaning, EDA, and visualization.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/Python-Analysis-Projects/tree/main/Marketing_Campaign_Analysis_Python" class="button">View Project</a></li>
-									</ul>
-								</article>
-									
-							</section>
-
-							<section id="excel-projects"><header class="major"><h2>Excel Projects</h2></header></section>
-							
-							<section class="posts">
-
-									<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/Employee_Salary_Analysis">Employee Salary Analysis<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/Employee_Salary_Analysis" class="image fit"><img src="images/Employee Salary Dashboard.png" alt="" /></a>
-									<p>Employee Salary Analysis — Excel dashboard analyzing employee salaries, experience, departments, job roles, education, and gender to uncover key salary trends and insights.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/Employee_Salary_Analysis" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/HR%20Employee%20Attrition%20Analysis">HR Employee Attrition Analysis<br/>
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/HR%20Employee%20Attrition%20Analysis" class="image fit"><img src="images/HR Employee Attrition Analysis.png" alt="" /></a>
-									<p>HR Employee Attrition Analysis — Excel dashboard analyzing employee attrition, job satisfaction, salary, departments, overtime, and employee demographics to identify key turnover trends and patterns.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/HR%20Employee%20Attrition%20Analysis" class="button">View Project</a></li>
-									</ul>
-								</article>
-
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/Sales%20%26%20Profit%20Analysis">Sales & Profit Analysis<br/>
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/Sales%20%26%20Profit%20Analysis" class="image fit"><img src="images/Sales & Profit Analysis Dashboard.png" alt="" /></a>
-									<p>Sales & Profit Analysis — Excel dashboard analyzing sales, profit, products, regions, and customer segments to identify key performance trends and profitability insights.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/Excel-Analysis-Projects/tree/main/Sales%20%26%20Profit%20Analysis" class="button">View Project</a></li>
-									</ul>
-								</article>
-
-							</section>
-
-							<section id="software-projects"><header class="major"><h2>Software Development Projects</h2></header></section>
-							<section class="posts">
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/Shop_App">Shopping App<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/Shop_App" class="image fit"><img src="images/ShopApp.jpg" alt="" /></a>
-									<p>In this project, we use Flutter to buy and sell furniture and household items.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/Shop_App" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/RestaurantApp">Restaurant App<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/RestaurantApp" class="image fit"><img src="images/MyRestaurantMeal.jpg" alt="" /></a>
-									<p>An app for purchasing meals and food items, and for simplifying the meal booking process.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/RestaurantApp" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/QararaApp">AlQarara App<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/QararaApp" class="image fit"><img src="images/AlQararaApp.jpg" alt="" /></a>
-									<p>The project consists of a mobile application for the Al-Qarara Municipality, designed to deliver municipal services anytime and anywhere through a smart approach leveraging various technologies. The application serves diverse groups—including service beneficiaries, the business sector, and citizens—by providing daily municipal news and information on the latest proposed projects.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/QararaApp" class="button">View Project</a></li>
-									</ul>
-								</article>
-								<article>
-									<header>
-										<h2><a href="https://github.com/ahmedawwad407/Shop_Website">Shopping Website<br />
-										</a></h2>
-									</header>
-									<a href="https://github.com/ahmedawwad407/Shop_Website" class="image fit"><img src="images/ShopWebsite.PNG" alt="" /></a>
-									<p>A website that sells electrical appliances, phones, and smartwatches.</p>
-									<ul class="actions special">
-										<li><a href="https://github.com/ahmedawwad407/Shop_Website" class="button">View Project</a></li>
-									</ul>
-								</article>
-								
-								
-</section>
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<section class="split contact">
-							<section class="alt">
-								<h3>Address</h3>
-								<p>Gaza Strip<br />
-								</p>
-							</section>
-							<section>
-								<h3>Phone</h3>
-								<p><a href="#">(+972) 59-525-0040</a></p>
-							</section>
-							<section>
-								<h3>Email</h3>
-								<p><a href="#">awwadahmed407@gmail.com</a></p>
-							</section>
-							<section>
-								<h3>Social</h3>
-								<ul class="icons alt">
-									<li><a href="https://www.linkedin.com/in/ahmedwadieawwad/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-									<li><a href="https://github.com/ahmedawwad407" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
-								</ul>
-							</section>
-						</section>
-					</footer>
-
-		
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
 </html>
