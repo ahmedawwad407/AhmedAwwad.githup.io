@@ -226,6 +226,18 @@ em{font-style:normal;color:#767676}
   justify-content: center;
   margin-top: 24px;
 }
+
+/* Mobile visibility fix */
+@media (max-width: 600px) {
+    .project-card,
+    .category,
+    .featured-project,
+    .project-image,
+    .project-content {
+        visibility: visible;
+    }
+}
+
 </style>
 
 </head>
@@ -624,7 +636,18 @@ em{font-style:normal;color:#767676}
 </div>
 
 <script>
-window.addEventListener('load', () => document.body.classList.add('loaded'));
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+
+    // Make sure all reveal elements become visible
+    // even on mobile browsers where IntersectionObserver
+    // may behave inconsistently.
+    setTimeout(() => {
+        document.querySelectorAll('.reveal').forEach(el => {
+            el.classList.add('visible');
+        });
+    }, 1000);
+});
 
 const reveal = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -633,9 +656,14 @@ const reveal = new IntersectionObserver((entries) => {
             reveal.unobserve(entry.target);
         }
     });
-}, { threshold: 0.08 });
+}, {
+    threshold: 0.05,
+    rootMargin: '0px 0px 100px 0px'
+});
 
-document.querySelectorAll('.section, .category, .project-card, .featured-project, .stat').forEach(el => {
+document.querySelectorAll(
+    '.section, .featured-project, .stat'
+).forEach(el => {
     el.classList.add('reveal');
     reveal.observe(el);
 });
